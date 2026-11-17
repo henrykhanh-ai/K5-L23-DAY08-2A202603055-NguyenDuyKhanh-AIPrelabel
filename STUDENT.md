@@ -1,12 +1,12 @@
 # Thông tin học viên
 
-- Họ và tên: <<>>
-- MSHV: <<>>
+- Họ và tên: Nguyễn Duy Khánh
+- MSHV: 2A202603055
 - Lớp (L2 / L3 / khác): <<>>
-- Tài khoản GitHub: <<>>
-- Repo bài nộp (URL): <<>>
+- Tài khoản GitHub: henrykhanh-ai
+- Repo bài nộp (URL): https://github.com/henrykhanh-ai/K5-L23-DAY08-2A202603055-NguyenDuyKhanh-AIPrelabel
 - Commit chốt bài (hash): <<>>
-- Máy: <<hệ điều hành, GPU (CUDA / MPS / không có)>>
+- Máy: Windows (x64), không có GPU (PyTorch CPU 2.15.0)
 - CVAT (Docker): <<phiên bản, ví dụ v2.81.0>>
 
 ## Kết quả tóm tắt (điền cuối bài; số lấy từ `submission/qc/*`, kèm mẫu số)
