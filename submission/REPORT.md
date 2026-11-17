@@ -75,3 +75,16 @@ Nếu Rework / Hold, việc cần làm tiếp: <<>>
 - Dùng cache `data/cache/` thay vì tự chạy? <<không / có, vì ...>>
 - Lỗi / bug script đã gặp (nếu có): <<>>
 - Một điều bạn làm khác lần sau: <<>>
+
+### Danh sách ca `can_review` và `ignore_region` (trích từ nhãn đã export)
+
+| File | Ảnh | Box | Lớp / loại | Vì sao không chắc quy tắc (bạn điền) |
+|---|---|---|---|---|
+| gold_manual.json | img_020 | #43 | person, `can_review` | <<>> |
+| gold_manual.json | img_036 | #55 | person, `can_review` | <<>> |
+| gold_manual.json | img_036 | #60 | person, `can_review` | <<>> |
+| gold_manual.json | img_036 | #68 | person, `can_review` | <<>> |
+| batch_reviewed.json | img_024 | CVAT #4298 | car, `can_review` | <<>> |
+| gold_manual.json | img_001 | 3 vùng | `ignore_region` | <<>> |
+| gold_manual.json | img_036 | 6 vùng | `ignore_region` | <<>> |
+| batch_reviewed.json | img_006, img_018, img_024, img_026 | mỗi ảnh 2 vùng | `ignore_region` | <<>> |
