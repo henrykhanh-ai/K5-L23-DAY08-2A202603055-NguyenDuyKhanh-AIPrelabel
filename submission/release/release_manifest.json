@@ -3,14 +3,18 @@
  "images": 24,
  "objects": 538,
  "per_class": {
-  "truck": 5,
-  "person": 273,
-  "bicycle": 13,
+  "truck": 4,
+  "person": 275,
+  "bicycle": 11,
   "motorbike": 146,
   "three_wheeler": 26,
-  "car": 63,
+  "car": 64,
   "ignore_region": 8,
   "bus": 4
  },
- "images_replaced_by_qc_fix": []
+ "images_replaced_by_qc_fix": [
+  "img_017.jpg",
+  "img_024.jpg",
+  "img_031.jpg"
+ ]
 }

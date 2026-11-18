@@ -3,5 +3,5 @@ img_003.jpg,,khong,Nguyen Duy Khanh,
 img_006.jpg,,khong,Nguyen Duy Khanh,
 img_013.jpg,,bo_sot,Nguyen Duy Khanh,"bỏ sót xe bên cạnh, phía trước id 127"
 img_014.jpg,,khong,Nguyen Duy Khanh,
-img_024.jpg,,khong,Nguyen Duy Khanh,
+img_024.jpg,304,sai_lop,Nguyen Duy Khanh,"box car bị gán truck (bẫy car->truck, phát hiện khi đối chiếu đáp án bẫy, đã sửa trong qc_fixed.json); khi QC bằng mắt đã ghi nhầm là không lỗi"
 img_033.jpg,,khong,Nguyen Duy Khanh,

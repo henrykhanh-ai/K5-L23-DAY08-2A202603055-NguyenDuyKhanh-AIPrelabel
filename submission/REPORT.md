@@ -65,12 +65,12 @@
 ## 7. QC và quyết định (Part 6)
 
 - Mẫu: 6 ảnh, 154 đối tượng (1 ảnh `can_review`: img_024 + 5 ngẫu nhiên: img_003, img_006, img_013, img_014, img_033; seed 42); người kiểm: bạn (**hạn chế**: bạn vừa là người duyệt).
-- Lỗi theo **đối tượng**: 1/154 = 0.6% · theo **ảnh**: 1/6 = 16.7% (ngưỡng Release ≤ 2%)
-- Top lỗi (trong: bỏ sót, thừa, sai lớp, sai vị trí/kích thước, sai thuộc tính, sai mask) + một ảnh ví dụ mỗi loại: chỉ 1 lỗi `bo_sot` (img_013: bỏ sót xe bên cạnh, phía trước id 127); không ghi nhận loại lỗi khác trong mẫu.
-- **Giới hạn mẫu nhỏ** (cận trên 95% trong `qc_report_auto.md`): 1 ảnh lỗi trong 6 ảnh mẫu, cận trên 95% (Wilson) của tỉ lệ ảnh lỗi thật là 56%; ngưỡng 2% không thể được chứng minh bằng mẫu 6 ảnh.
+- Lỗi theo **đối tượng**: 2/154 = 1.3% · theo **ảnh**: 2/6 = 33.3% (ngưỡng Release ≤ 2%). Ghi chú: lúc QC bằng mắt tôi ghi img_024 là không lỗi; khi đối chiếu đáp án bẫy mới thấy box #304 car bị gán truck vẫn còn trong mẫu, nên đã sửa phiếu QC cho trung thực.
+- Top lỗi (trong: bỏ sót, thừa, sai lớp, sai vị trí/kích thước, sai thuộc tính, sai mask) + một ảnh ví dụ mỗi loại: `bo_sot` 1 lỗi (img_013: bỏ sót xe bên cạnh, phía trước id 127); `sai_lop` 1 lỗi (img_024: box #304 car bị gán truck).
+- **Giới hạn mẫu nhỏ** (cận trên 95% trong `qc_report_auto.md`): 2 ảnh lỗi trong 6 ảnh mẫu, cận trên 95% (Wilson) của tỉ lệ ảnh lỗi thật là 70%; ngưỡng 2% không thể được chứng minh bằng mẫu 6 ảnh.
 - Script kiểm được / không kiểm được (ví dụ ôm sát, cùng bỏ sót với máy, theo checklist thật): script kiểm được tên file, lớp có trong taxonomy, box nằm trong ảnh, đủ ảnh, các số đo (accepted / edited / deleted / added, bắt bẫy, tỉ lệ lỗi QC). Script không kiểm được box có ôm sát vật không, lớp có đúng thực tế không, vật mà cả người duyệt lẫn máy cùng bỏ sót (ví dụ xe bị sót ở img_013, chỉ phát hiện khi QC bằng mắt), và việc người duyệt có theo checklist thật hay không.
 
-**Quyết định: Rework**, ngày 2026-11-18. Lý do (đi theo Hold → Rework → Release): không Hold vì 7 câu hỏi mở đã được chốt ở v1.1; Rework vì ảnh có lỗi 1/6 = 16.7% > 2% và bắt bẫy 9/12 = 75% < 80%; dữ liệu release cần chính xác tuyệt đối theo metrics.
+**Quyết định: Rework**, ngày 2026-11-18. Lý do (đi theo Hold → Rework → Release): không Hold vì 7 câu hỏi mở đã được chốt ở v1.1; Rework vì ảnh có lỗi 2/6 = 33.3% > 2% và bắt bẫy 9/12 = 75% < 80%; dữ liệu release cần chính xác tuyệt đối theo metrics.
 Nếu Rework / Hold, việc cần làm tiếp: sửa xe bị sót ở img_013; sửa 3 bẫy sai lớp (img_017, img_031, img_024) và car #4298 ở img_024 rồi xuất `qc_fixed.json`; duyệt lại cả lô; chạy lại `build_release.py` và `qc_sample.py --force`.
 
 ## 8. Ghi chú cá nhân

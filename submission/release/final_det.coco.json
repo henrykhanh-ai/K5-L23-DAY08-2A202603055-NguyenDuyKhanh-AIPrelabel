@@ -3034,7 +3034,7 @@
   {
    "id": 153,
    "image_id": 10,
-   "category_id": 2,
+   "category_id": 1,
    "bbox": [
     330.51,
     314.67,
@@ -5852,7 +5852,7 @@
   {
    "id": 304,
    "image_id": 15,
-   "category_id": 6,
+   "category_id": 4,
    "bbox": [
     203.74,
     470.74,
@@ -8918,7 +8918,7 @@
   {
    "id": 468,
    "image_id": 21,
-   "category_id": 2,
+   "category_id": 1,
    "bbox": [
     346.11,
     134.61,
