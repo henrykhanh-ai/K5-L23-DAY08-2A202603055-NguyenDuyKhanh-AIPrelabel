@@ -6,13 +6,13 @@
 
 | # | Câu hỏi | Quyết định | Ảnh ví dụ | `case_id` |
 |---|---|---|---|---|
-| 1 | Xe đạp điện / xe máy điện nhỏ: `bicycle` hay `motorbike`? | `motorbike` | <<chưa có ảnh ví dụ>> | CAL-04 |
+| 1 | Xe đạp điện / xe máy điện nhỏ: `bicycle` hay `motorbike`? | `motorbike` | Không có ảnh phù hợp trong bộ dữ liệu; mô tả: xe máy điện / xe đạp điện dáng scooter (có yên, sàn để chân, bánh nhỏ, không đạp) gán `motorbike` (không đưa ảnh ngoài bộ dữ liệu vào repo, theo RULES.md) | CAL-04 |
 | 2 | Khối xe máy đỗ dày đặc gần camera: từng xe hay `ignore_region`? | `ignore_region` | img_018, img_024 | CAL-05 |
 | 3 | Hàng nhô ra: box / mask xe có gồm hàng không? | Hàng kèm trong xe thì box / mask chung với xe; không tính hàng nếu nhô ra quá 20% chiều dài xe (giữ mục 4.1 quy tắc 5 của v1.0, áp dụng cả cho mask) | img_013 | CAL-06 |
 | 4 | Người ngồi trong xe ba bánh có mui che | Person tách riêng thành 1 lớp (box / mask riêng); ngưỡng "còn thấy ≥ 20%" giữ như v1.0 | img_013 | CAL-07 |
 | 5 | Kính chắn gió / cửa sổ xe: thuộc mask xe hay không? | Kính xe thuộc vật nên có mask (giữ mục 4.2 quy tắc 3) | img_013, img_017 | CAL-02 |
-| 6 | Box máy chồng nhau quá nhiều trong ảnh đêm: gộp hay giữ? | Gán lại từng box | <<chưa có ảnh ví dụ>> | CAL-08 |
-| 7 | Mức tin cậy tối thiểu để chấp nhận box máy không cần sửa? | 80% (`conf` ≥ 0.80); chỉ là ngưỡng tin cậy, box vẫn phải duyệt theo checklist | <<chưa có ảnh ví dụ>> | CAL-09 |
+| 6 | Box máy chồng nhau quá nhiều trong ảnh đêm: gộp hay giữ? | Gán lại từng box | Không có ảnh phù hợp trong bộ dữ liệu; mô tả: đám đông ban đêm dưới đèn đường, người đứng sát nhau nên box máy chồng lên nhau, mỗi người phải gán lại một box riêng (không đưa ảnh ngoài bộ dữ liệu vào repo, theo RULES.md) | CAL-08 |
+| 7 | Mức tin cậy tối thiểu để chấp nhận box máy không cần sửa? | 80% (`conf` ≥ 0.80); chỉ là ngưỡng tin cậy, box vẫn phải duyệt theo checklist | Không có ảnh phù hợp trong bộ dữ liệu; mô tả: đường phố lúc chạng vạng, máy vẽ nhiều box `car`: các box điểm > 0.80 (0.81, 0.82, 0.86, 0.91, 0.92) ôm đúng xe nên được chấp nhận; các box điểm < 0.80 (0.78, 0.30) ở cụm xe xa, chồng lên nhau phải duyệt lại từng box (không đưa ảnh ngoài bộ dữ liệu vào repo, theo RULES.md) | CAL-09 |
 
 ## 2. Ca khó mới (từ lỗi của máy, bẫy lọt, box `can_review`)
 

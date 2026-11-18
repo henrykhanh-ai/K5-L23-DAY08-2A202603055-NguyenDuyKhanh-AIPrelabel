@@ -10,3 +10,6 @@ models/*
 *.onnx
 _review/
 *.ts
+
+# file bí mật cục bộ, không commit
+.webui_secret_key
