@@ -45,11 +45,15 @@
 
 | Ảnh | SAM (phiên bản) | Số click | Mask gồm người lái / hàng hoá? | Lỗi quan sát | File trong `masks/` |
 |---|---|---|---|---|---|
-| img_013 (tuk-tuk) | SAM 2.1 (`sam2.1_b.pt`) | 4 dương + 0 âm | có người (mask gồm cả người lái) | mask phủ khoảng 90% xe + người; bị lem ra ngoài, dính thêm phần ghế, bàn và người phía ngoài | `tuktuk_img013.jpg` |
-| img_017 (tuk-tuk) | SAM 2.1 (`sam2.1_b.pt`) | 1 dương + 0 âm | không ghi nhận | mask phủ toàn xe tuk-tuk gồm cả mui; không bị lem | `xe3banh_img017.jpg` |
+| img_013 (tuk-tuk) | SAM 2.1 (`sam2.1_b.pt`) | 4 dương + 0 âm | có: mask gồm cả người lái và người phía ngoài bị lem vào | mask phủ khoảng 90% xe + người; bị lem ra ngoài, dính thêm phần ghế, bàn và người phía ngoài; theo đề xuất v1.1, người lái bị tô chung với xe là lỗi | `tuktuk_img013.jpg` |
+| img_013 (tuk-tuk, chạy lại thêm click âm) | SAM 2.1 (`sam2.1_b.pt`) | 4 dương + 4 âm | có: người lái và hàng trong xe vẫn bị tô cùng một polygon với xe | 4 click âm (2 người, 1 bàn, 1 ghế bên ngoài) làm mask không còn dính các vật bên ngoài; người + hàng trong xe vẫn nằm trong mask; theo đề xuất v1.1, người lái bị tô chung với xe là lỗi | `tuktuk_img013_neg.jpg` |
+| img_017 (tuk-tuk) | SAM 2.1 (`sam2.1_b.pt`) | 1 dương + 0 âm | không áp dụng: xe không có người lái và không có hàng; không lem người bên ngoài | mask phủ toàn xe tuk-tuk gồm cả mui; không bị lem | `xe3banh_img017.jpg` |
 | img_010 (xích lô) | SAM 2.1 (`sam2.1_b.pt`) | 3 dương + 0 âm | không tô người lái | mask phủ toàn xe; không tô người lái; không tô biển số xe | `xichlo_img010.jpg` |
 
-- Đối chiếu guideline mục 4.2: quy tắc nào giúp, quy tắc nào thiếu? <<>>
+- Đối chiếu guideline mục 4.2: quy tắc nào giúp, quy tắc nào thiếu?
+  - **Quy tắc giúp được:** (4) hai vật chạm nhau: ở img_013, sau khi thêm 4 click âm thì 2 người, bàn và ghế bên ngoài không còn dính mask; với người và hàng trong xe, click thuộc xe nên xe được coi là vật phía trước và người lái được tô trong vùng chạm, cùng một polygon. (2) lỗ thủng: ở img_010, khung xích lô có nhiều khoảng hở (thanh sắt, nan bánh xe), mask nên tô kín và SAM đã tô kín. (3) bóng đổ / kính xe: mask không ăn vào bóng đổ dưới gầm xe; kính xe thuộc vật nên có mask.
+  - **Quy tắc thiếu / mơ hồ:** mục 4.2 không nói người lái ngồi trên xe có thuộc mask xe ba bánh không (quan sát: ở img_013 SAM tô người lái chung mask với xe, không thành polygon riêng; ở img_010 SAM không tô người lái); cũng không nói rõ người ngồi *bên trong* xe thì vật nào là "vật phía trước" ở vùng chạm. Biển số thuộc xe nhưng ở img_010 không được mask, chỉ bị lem; guideline chỉ nhắc kính xe, không nhắc biển số / phụ kiện gắn xe. Ngưỡng "lệch biên ≤ ~3 px" chỉ kiểm tra được bằng mắt trên ảnh overlay khoảng 50%.
+  - **Đề xuất cho v1.1:** người lái là vật riêng (polygon `person` riêng); phần người lái bị xe che thì thuộc xe; tách biệt rõ ràng để không nhầm lẫn với mask của các vật khác như người đi bộ.
 - *(Tuỳ chọn)* Interactor SAM trong CVAT: làm được / không (lỗi gì, đã thử gì); khác gì offline: <<>>
 
 ## 6. Calibration (Part 6)
