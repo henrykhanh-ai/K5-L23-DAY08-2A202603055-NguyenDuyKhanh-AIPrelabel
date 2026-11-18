@@ -5,7 +5,7 @@
 - Lớp (L2 / L3 / khác): L2
 - Tài khoản GitHub: henrykhanh-ai
 - Repo bài nộp (URL): https://github.com/henrykhanh-ai/K5-L23-DAY08-2A202603055-NguyenDuyKhanh-AIPrelabel
-- Commit chốt bài (hash): <<>>
+- Commit chốt bài (hash): 5771860
 - Máy: Windows (x64), không có GPU (PyTorch CPU 2.15.0)
 - CVAT (Docker): v2.74.1
 
