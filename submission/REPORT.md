@@ -45,7 +45,9 @@
 
 | Ảnh | SAM (phiên bản) | Số click | Mask gồm người lái / hàng hoá? | Lỗi quan sát | File trong `masks/` |
 |---|---|---|---|---|---|
-| <<img_0xx>> | <<>> | <<>> | <<>> | <<>> | <<>> |
+| img_013 (tuk-tuk) | SAM 2.1 (`sam2.1_b.pt`) | 4 dương + 0 âm | có người (mask gồm cả người lái) | mask phủ khoảng 90% xe + người; bị lem ra ngoài, dính thêm phần ghế, bàn và người phía ngoài | `tuktuk_img013.jpg` |
+| img_017 (tuk-tuk) | SAM 2.1 (`sam2.1_b.pt`) | 1 dương + 0 âm | không ghi nhận | mask phủ toàn xe tuk-tuk gồm cả mui; không bị lem | `xe3banh_img017.jpg` |
+| img_010 (xích lô) | SAM 2.1 (`sam2.1_b.pt`) | 3 dương + 0 âm | không tô người lái | mask phủ toàn xe; không tô người lái; không tô biển số xe | `xichlo_img010.jpg` |
 
 - Đối chiếu guideline mục 4.2: quy tắc nào giúp, quy tắc nào thiếu? <<>>
 - *(Tuỳ chọn)* Interactor SAM trong CVAT: làm được / không (lỗi gì, đã thử gì); khác gì offline: <<>>
